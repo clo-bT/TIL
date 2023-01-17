@@ -35,9 +35,11 @@ while True:
             elif rsp_list == [1,1] or rsp_list == [2,2] or rsp_list == [3,3]:
                 print(f'비겼습니다!\n현재 컴퓨터: {computer_win_count}승 / 유저: {user_win_count}승 입니다\n')
                 game += 1
+
             #엉뚱한 거 낸 경우
             else:
                 print('다시 선택하세요\n')
+                
             #다섯번  경기 후에 종료
             if game == 6:
                 break
