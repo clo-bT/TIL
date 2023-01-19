@@ -14,17 +14,23 @@ def fn_d(n):
     print(a + m)
 
 fn_d(n)
-arr = [0]*1000
-def is_selfnumber(a):
-    for i in range(1000):
-        if (fn_d(i))<1000:
-            arr[fn_d(i)] = 1
-    for i in range(1000):
-        if arr[i] == 0:
-            print(i)
-        
-is_selfnumber()
-    
+
+
+def find_gen(number):
+    generator = []
+    for i in range(1, number):
+        count=0
+        for n in str(i):
+            count += int(n)
+        count += i
+        if count == number:
+            generator.append(i)
+    return generator
+selfnumber = []
+for i in range(1,5001):
+    generator = find_gen(i)
+    if not generator:
+        selfnumber.append(i)
     
     
     
