@@ -4,6 +4,7 @@
 # B.    출력 예시 
 # [ ['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat'] ] 
 
+'''
 #입력을 받고 리스트로 만들고 
 wordlist = list(map(str,input().split(',')))
 a = []
@@ -44,3 +45,18 @@ mat()
 
 
 
+a= list(map(str,input().split(',')))
+n = len(a)
+for i in range(n):
+    A = sorted(a[i])
+    print(A)
+
+'''
+
+
+a = {}
+li = list(map(str,input().split(',')))
+for i in li:
+    s= ''.join(sorted(i))
+    a[s] = a.get(s,[]) + [i]
+print(a.values())
