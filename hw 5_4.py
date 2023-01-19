@@ -27,7 +27,7 @@ def is_selfnumber(number):
             generator.append(i)
     return generator
 selfnumber = []
-for i in range(1,5001):
+for i in range(1,1001):
     generator = is_selfnumber(i)
     if not generator:
         selfnumber.append(i)
