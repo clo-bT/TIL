@@ -57,4 +57,6 @@ while ori_number_pivot < 5000:
 
 print(sum)
 '''
+
+
     
