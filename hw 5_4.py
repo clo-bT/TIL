@@ -3,14 +3,34 @@
 # 101
 
 
-a = input()
-def fn_d(n):
-    d = len(a) + int(a)
-    return(d)
-def is_selfnumber(m):
+n = int(input())
 
-ori_number =[]
-gen_number =[]
+def fn_d(n):
+    a = 0
+    m = n
+    while n > 0:
+        a += n % 10
+        n //= 10
+    print(a + m)
+
+fn_d(n)
+arr = [0]*1000
+def is_selfnumber(a):
+    for i in range(1000):
+        if (fn_d(i))<1000:
+            arr[fn_d(i)] = 1
+    for i in range(1000):
+        if arr[i] == 0:
+            print(i)
+        
+is_selfnumber()
+    
+    
+    
+    
+'''
+ori_number = []
+gen_number = []
 for number in range(1,5001):
     ori_number.append(number)
 
@@ -45,7 +65,7 @@ gen_number_pivot = 0
 while ori_number_pivot < 5000:
     if ori_number[ori_number_pivot]< gen_number[gen_number_pivot]:
         #print ("self number",ori_number[ori_number_pivot])
-        sum = sum + ori_number[ori_number_pivot];
+        sum = sum + ori_number[ori_number_pivot]
         #print (sum)
         ori_number_pivot = ori_number_pivot + 1
 
@@ -56,4 +76,4 @@ while ori_number_pivot < 5000:
         gen_number_pivot = gen_number_pivot + 1
 
 print(sum)
-    
+'''   
