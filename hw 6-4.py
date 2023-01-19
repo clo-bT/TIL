@@ -39,11 +39,7 @@ mat()
     #if len(wordlist[i][i])
 
 
-# 2. 아스키코드 이용하기
-
-
-
-
+# 다시다시
 
 a= list(map(str,input().split(',')))
 n = len(a)

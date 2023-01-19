@@ -37,3 +37,6 @@ while True:
     a['요일'] = b[calendar.weekday(y,m,d)]
     print(a)
     break
+
+
+
