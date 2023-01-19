@@ -16,7 +16,7 @@ def fn_d(n):
 fn_d(n)
 
 
-def find_gen(number):
+def is_selfnumber(number):
     generator = []
     for i in range(1, number):
         count=0
@@ -28,11 +28,11 @@ def find_gen(number):
     return generator
 selfnumber = []
 for i in range(1,5001):
-    generator = find_gen(i)
+    generator = is_selfnumber(i)
     if not generator:
         selfnumber.append(i)
     
-    
+print(selfnumber)
     
 '''
 ori_number = []
