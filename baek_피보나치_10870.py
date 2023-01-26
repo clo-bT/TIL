@@ -14,5 +14,14 @@ n이 주어졌을 때, n번째 피보나치 수를 구하는 프로그램을 작
 # 출력
 # 55
 
-def fibo():
-    pass
+n = int(input())
+def fibo(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    elif n == 0:
+        return 0
+    return fibo(n - 1) + fibo(n - 2)
+
+print(fibo(n))
