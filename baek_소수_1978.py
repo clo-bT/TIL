@@ -1,3 +1,6 @@
+'''
+에라토스테네스의 체
+
 def prime_list(n):
     # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
     array = [True] * n
@@ -12,3 +15,10 @@ def prime_list(n):
     return [i for i in range(2, n) if array[i] == True]
 
 print(prime_list(100))
+'''
+
+N = int(input()) #4
+a = list(map(int,input().split())) #[1,3,5,7]
+for i in a:
+    for j in range(N):
+        
