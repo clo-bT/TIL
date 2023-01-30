@@ -57,3 +57,24 @@ class Singer():
 #접근은
 print(아이유.name)
 박치언 = Singer('박치언')
+
+
+# 오후수업
+
+def get_population():
+    pass
+# 클래스 메서드
+# 인스턴스 변수 사용하면 에러 남
+@classmethod
+def get_count(cls):
+    print(f'전체 나라 수는 {cls.count} 입니다')
+
+# 스태틱 메서드 인스턴스,클래스 변수 사용 안함
+# 변수는 안 써도 문맥상 해당 클래스에 포함된다고 판단될 때
+@staticmethod
+def print_test():
+    print('print_test')
+
+def __del__(self):
+    print('소멸자')
+
