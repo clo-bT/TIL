@@ -8,8 +8,8 @@ for tc in range(1, T+1):
         # 3 광역급행은 짝-4의배수 홀-3의배수O 10의배수X
         li = [0] * (e-s+1)
         if n == 1: #[2,3,4,5]
-            for j in range()
-            pass
+            for j in range():
+                pass
         elif n ==2: #[3,5,7,9,10]
             if s % 2 == 0: #짝
                 
