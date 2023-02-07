@@ -15,21 +15,24 @@ dir = 0 # 진행방향
     for x in arr:
         print(*x)
 '''
-di = [-1,0] #상 좌
-dj = [0,-1]
+di = [-1,0,0] #상 좌 우
+dj = [0,-1,1]
 for tc in range(10):
     T = int(input()) # 그냥 번호 1-10
-    a = [list(map(int,input().split())) for _ in range(100)]
-    cnt = 0
-    for i in range(100,0,-1):
-        for j in range(100,0,-1):
-                if a[i-1][j] == 1:
-                    i, j = i+di[0], j+dj[0]
-                else:
-                    cnt += 1
-                    i, j = i+di[1], j+dj[1]
+    a = [[0] + list(map(int,input().split())) +[0] for _ in range(100)] # 옆에 0짜리 만들기
+    for i in range(101,0,-1):
+        for j in range(101,0,-1):
+            if a[99][j] == 2 :
+                for
+                si = i
+                sj = j
+                i = i-1
+                if a[i][j-1] == 1:
+                    j = j-1
+                elif a[i][j+1] == 1:
+                    j = j+1
 
-    print(cnt)
+
 
                 
 
