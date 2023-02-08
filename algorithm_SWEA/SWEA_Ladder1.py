@@ -23,7 +23,7 @@ for tc in range(10):
     for i in range(101,0,-1):
         for j in range(101,0,-1):
             if a[99][j] == 2 :
-                for
+                pass
                 si = i
                 sj = j
                 i = i-1
@@ -32,7 +32,64 @@ for tc in range(10):
                 elif a[i][j+1] == 1:
                     j = j+1
 
+'''
+연주님 코드
+for tc in range(1, 11):
+    n = int(input())
+    li = [list(map(int, input().split())) for _ in range(100)]
+ 
+    di = 99  # 도착점
+    dj = li[99].index(2)
+ 
+    while di >= 0: # 0행에 도달할때까지
+        if di == 0:
+            break
+        if dj >=1 and li[di][dj - 1]: # 왼쪽에 사다리 있으면
+            while dj > 0:
+                if li[di-1][dj-1]:
+                    di -= 1
+                    dj -= 1
+                    break
+                else:
+                    dj -= 1
+        elif dj <=98 and li[di][dj + 1]: # 오른쪽에 사다리 있으면
+            while dj < 99:
+                if li[di-1][dj+1]:
+                    di -= 1
+                    dj += 1
+                    break
+                else:
+                    dj += 1
+        else:
+            li[di][dj] = 0
+            di -= 1 # 좌우에 사다리 없으면(혹은 양쪽 끝이면) 올라가
+    print(f'#{tc}', dj)
 
+'''
+'''
+치훈님 코드
+di = [0, -1, 0]
+dj = [-1, 0, 1]
+ 
+for _ in range(1, 11):
+    tc = int(input())
+    board = [list(map(int, input().split())) for _ in range(100)]
+    i = 99
+    j = board[99].index(2) # 현재 위치 i,j
+    dir = 1
+    while i > 0:
+        if dir == 1:
+            i, j = i + di[dir], j + dj[dir]
+            if j != 0 and board[i][j-1] == 1:
+                dir = 0
+            elif j != 99 and board[i][j+1] == 1:
+                dir = 2
+        else:
+            i, j = i + di[dir], j + dj[dir]
+            if board[i-1][j] == 1:
+                dir = 1
+    print(f'#{tc} {j}')
+'''
 
                 
 
