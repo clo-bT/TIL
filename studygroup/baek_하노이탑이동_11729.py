@@ -1,4 +1,5 @@
 '''
+# 구글링
 # 하노이의 탑
 # 입력: 옮기려는 원반의 갯수 n
 #      옮길 원반이 현재 있는 출발점 기둥 from_pos
@@ -26,6 +27,16 @@ print("n = 3")
 hanoi(3, 1, 3, 2) # 원반 세 개를 1번 기둥에서 3번 기둥으로 이동(2번을 보조 기둥으로)
 '''
 
+# 1. 작은 원반 n-1를 막대 B로 옮긴다.
+# 2. n번째 큰 원반을 막대 C로 옮긴다.
+# 3. 막대 B에 있던 작은 원반을 막대 C로 옮긴다.
+
 n = int(input())
-def hanoi(n,p1,p2,p3):
-    pass
+def hanoi(n, f, b, t):
+    if n == 1:
+        print(f, t)
+    hanoi(n-1, f, t, b)
+    print(f, t)
+    hanoi(n-1, b, f, t)
+
+hanoi(n,1,2,3)
