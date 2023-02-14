@@ -32,11 +32,17 @@ hanoi(3, 1, 3, 2) # 원반 세 개를 1번 기둥에서 3번 기둥으로 이동
 # 3. 막대 B에 있던 작은 원반을 막대 C로 옮긴다.
 
 n = int(input())
-def hanoi(n, f, b, t):
+def hanoi(n, a, b, c):
     if n == 1:
-        print(f, t)
-    hanoi(n-1, f, t, b)
-    print(f, t)
-    hanoi(n-1, b, f, t)
+        print(a,c)
+        return
+    if n == 2:
+        print(a,b)
+        print(a,c)
+        print(b,c)
+        return
+    hanoi(n-1, a, c, b)
+    print(a,c)
+    hanoi(n-1, b, a, c)
 
 hanoi(n,1,2,3)
