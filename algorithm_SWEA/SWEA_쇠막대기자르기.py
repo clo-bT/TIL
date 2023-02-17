@@ -22,7 +22,14 @@ for test_case in range(1, T + 1):
 
 T = int(input()) #2
 for tc in range(T):
+    cnt = 0
+    ans = 0
     a = input()
     for i in range(len(a)):
-        print(a[i:i+2])
-        # if a[i:i+2] =='()':
+        if a[i:i+2] == '()':
+            ans += cnt
+        elif a[i] == '(':
+            cnt += 1
+        elif a[i] == ')':
+            
+
