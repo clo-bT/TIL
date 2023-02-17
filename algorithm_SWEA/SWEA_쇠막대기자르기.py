@@ -1,4 +1,4 @@
-T = int(input())
+'''T = int(input())
 for test_case in range(1, T + 1):
     st = input()
     ans = cnt = 0
@@ -14,3 +14,15 @@ for test_case in range(1, T + 1):
                 ans += 1
  
     print(f'#{test_case} {ans}')
+
+'''
+
+
+
+
+T = int(input()) #2
+for tc in range(T):
+    a = input()
+    for i in range(len(a)):
+        print(a[i:i+2])
+        # if a[i:i+2] =='()':
