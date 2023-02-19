@@ -12,11 +12,10 @@ for test in range(T):
         for j in range(M):                  # M번 반복
             count_flower = arr_all[i][j]    # 기준점의 꽃잎
             for k in range(4):              # 상하좌우의 꽃잎 수를 더함
-                for l in range(1, arr_all[i][j]+1):
-                    if 0 <= i + (pop_move[k][0]*l) <= N-1 and 0 <= j + (pop_move[k][-1]*l) <= M-1:
-                        count_flower += arr_all[i + (pop_move[k][0]*l)][j + (pop_move[k][-1]*l)]
-                    else:
-                        pass
+                if 0 <= i + pop_move[k][0] <= N-1 and 0 <= j + pop_move[k][-1] <= M-1:
+                    count_flower += arr_all[i + pop_move[k][0]][j + pop_move[k][-1]]
+                else:
+                    pass
             if count_flower > count_max_flower:
                 count_max_flower = count_flower
  
