@@ -1,18 +1,13 @@
-sub = 1
-cnt = 0
 for _ in range(1, 11):
+    sub = 0
     tc = int(input())
     arr = list(map(int,input().split()))
     while True:
-        if arr[0]//10 == 0:
+        sub += 1
+        if arr[0] //10 != 0:
+            arr[0] = arr[0] - sub%5
             arr.append(arr.pop(0))
-            cnt += 1
-        else:
-            arr[0] -= sub % 5
-            arr.append(arr.pop(0))
-            sub += 1
-        for i in range(8):
-            arr[i]
+        if arr[-1] <= 0:
+            arr[-1] = 0
+            break
     print(arr)
-    
-
