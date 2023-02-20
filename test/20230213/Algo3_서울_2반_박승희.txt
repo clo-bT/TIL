@@ -1,0 +1,38 @@
+(1)
+'''
+a = input()
+s = []
+for i in a:
+    if i == '(':
+        s.append(i)
+    elif s and i == ')' and s[-1] == '(':
+        s.pop()
+    else:
+        s.append(')')
+        break
+if len(s) == 0:
+    print('정상')
+else:
+    print('오류')
+'''
+
+')'가 먼저 나오면 오류.
+if '('를 만나면 stack에 push
+elif ')'를 만나고, stack이 비어있지 않고, stack[-1] 즉 마지막에 들어온 문자열이 '('면 pop()
+else stack에 ')' push    # stack을 비어있지 않게 하기 위해
+if len(stack) == 0 스택이 비어있으면 정상적.
+
+(2)if ( ( i == 0 ) && ( j == 0)))
+
+[ ( ] # 여는 괄호를 만나 push
+[ ( , ( ] # 여는 괄호를 만나 push
+[ ( ] # 닫는 괄호를 만나 pop
+
+[ ( , ( ] # 여는 괄호를 만나 push
+[ ( ] # 닫는 괄호를 만나 pop
+[ ] # 닫는 괄호를 만나 pop
+[ ] # 닫는 괄호를 만나 pop해야 함. Indexerror
+
+
+오류. stack이 비어있는데 닫는 괄호를 만나서 pop() 할 수 없기 때문에
+'(' 여는 괄호와 ')' 닫는 괄호의 수가 맞지 않아서 오류.
