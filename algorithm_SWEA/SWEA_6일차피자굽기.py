@@ -7,7 +7,7 @@ for tc in range(1, T+1):
 
     # 화덕 채우기
     for i in range(N):
-        oven.append(pizza[i]) # 피자번호
+        oven.append(i)      # 오븐에 넣은 피자번호
     last = N - 1            # 화덕에 들어간 마지막 피자번호
     # 더이상 피자가 없을 때까지 회전
     ans = 0                 # 마지막으로 완성된 피자번호
@@ -22,6 +22,34 @@ for tc in range(1, T+1):
                 last += 1   # 추가로 화덕에 투입
                 oven.append(last) 
     print(f'#{tc}',ans+1)
+
+
+# 교수님 코드 2
+T = int(input()) #3
+for tc in range(1, T+1):
+    N, M = map(int,input().split()) #3 5 
+    pizza = list(map(int,input().split())) #7 2 6 5 3
+    oven = [0] *(N+1)       # 순환큐
+    front, rear = 0,0
+    dough = N               # 오븐에 들어갈 차례인 피자번호
+    door = 0                # 입구로 돌아온 피자번호
+    for i in range(N):      # oven 채우기
+        rear = (rear+1)%N
+        oven[rear] = dough   # 피자번호 -1 (0번부터, 문제서는 1번부터)
+    while front != rear:    # oven이 비어있지 않으면
+        front = (front+1)%N
+        door = oven(front)  # 입구로 돌아온 피자를 꺼내고
+        pizza[door] //= 2   # 녹은 치즈 기록
+        if pizza[door] > 0: # 치즈가 남아있으면
+            rear = (rear+1)%N
+            oven[rear] = door   # 다시 투입
+        else:                   # 치즈가 모두 녹은 경우
+            if dough < M:       # 구울 피자가 남아있으면
+                rear += 1
+                oven[rear] = dough  # 오븐에 투입
+                dough += 1          # 다음에 투입할 피자
+    print(f'#{tc}',door+1)
+
 
 
 
