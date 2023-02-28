@@ -14,16 +14,18 @@ for tc in range(1,T+1):
     arr = [input() for _ in range(N)]
     
     for i in range(N):
-        for j in range(M-1, -1, -1):
+        for j in range(M-1, 54, -1):    # 가장 왼쪽에 치우친 패턴이 0 - 55일테니까
             if arr[i][j] == '1':
                 line = arr[i][j-55:j+1]
-                break
-            
+                break                   # 누구를 빠져나오는 break인지 주석사용하기
+        if line != '':
+            break   # for i
+        
     mycode = ''
     ans = 0
     for i in range(0,56,7):
-        mycode += str(code[line[i:i+7]])
-        ans += code[line[i:i+7]]
+        mycode += str(code[line[i:i+7]]) #75755027
+        ans += code[line[i:i+7]] #38
     
     even, odd = 0,0
     for i in range(0,8,2):

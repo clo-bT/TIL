@@ -1,0 +1,11 @@
+(1)
+def inorder(v):
+    while q:
+        inorder(v.left)     # 왼쪽자식 끝까지 이동(i*2)
+        print(v)            # 그때의 정점 출력
+        inorder(v.right)    # v의 오른쪽 자식 이동(i*2+1)
+    return
+(2)
+전위순회 A B C D E
+중위순회 B A D C E
+후위순회 B D E C A

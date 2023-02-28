@@ -1,3 +1,5 @@
+'''
+
 T = int(input()) #1
 for tc in range(1,T+1):
     N = int(input()) #2
@@ -7,7 +9,7 @@ for tc in range(1,T+1):
     for j in range(P):
         pass
 '''
-온라인강의 풀이
+## 온라인강의 풀이
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
@@ -24,4 +26,3 @@ for tc in range(1, T+1):
         p = int(input())
         alst.append((cnts[p]))
     print(f'#{tc}', *alst)
-'''
