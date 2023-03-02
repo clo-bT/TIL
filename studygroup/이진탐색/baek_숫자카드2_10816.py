@@ -9,14 +9,14 @@ B = list(map(int,input().split())) #[10, 9, -5, 2, 3, 4, 5, -10]
 def binary_search(i, li):
     s = 0
     e = N - 1
-    while s<=e:
+    while e - s != 1:
         mid = (s + e) // 2
         if li[mid] == i:
             return li[s:e+1].count(i)
         elif li[mid] < i:
-            s = mid + 1
-        else:
-            e = mid - 1
+            s = mid
+        elif li[mid] > i:
+            e = mid
     return 0
     
 for i in B:
