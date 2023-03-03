@@ -14,9 +14,9 @@ def binary_search(i, li):
         if li[mid] == i:
             return li[s:e+1].count(i)
         elif li[mid] < i:
-            s = mid
+            s = mid+1
         elif li[mid] > i:
-            e = mid
+            e = mid-1
     return 0
     
 for i in B:
