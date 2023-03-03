@@ -1,4 +1,5 @@
 '''
+## 내 망한 코드
 T = int(input())  # 4
 for tc in range(1, T + 1):
     N, M, K = map(int, input().split())  # N명 M초 K개 #2 2 2
