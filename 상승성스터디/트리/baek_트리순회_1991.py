@@ -1,6 +1,3 @@
-import sys
-input = sys.stdin.readline
-
 def preorder(root):
     if root != '.':
         print(root, end='')  # root
@@ -17,13 +14,13 @@ def postorder(root):
     if root != '.':
         postorder(tree[root][0])  # left
         postorder(tree[root][1])  # right
-        print(root, end='')  # roo
+        print(root, end='')  # root
 
 N = int(input())
 tree = {}
 
 for _ in range(N):
-    root, left, right = list(map(str, input().split()))
+    root, left, right = map(str, input().split())
     tree[root] = left, right
 
 preorder('A')
