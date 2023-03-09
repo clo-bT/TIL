@@ -1,0 +1,9 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    
+    float: left;
+    margin-right: 20px;
+    /* 박스뒤에 공간 생김 딱 붙어 있지 않고 약간 띄어서 글자 나오게 */
+}
