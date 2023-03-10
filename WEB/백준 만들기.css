@@ -1,0 +1,47 @@
+.logo{
+    margin-top: 20px;
+    float: left;
+}
+.nav-bar {
+    justify-content: right;
+    display: flex;
+    padding-top: 5px;
+}
+.nav {
+    margin: 8px;
+    font-size: 5px;
+    color: rgb(143, 143, 143);
+}
+.stick {
+    height: 13px;
+    width: 1px;
+    border-left: 1px solid rgb(143, 143, 143);
+    margin-top: 9px;
+}
+.menu-bar {
+    float: right;
+    display: flex;
+    padding-top: 5px;
+}
+.m {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.down {
+    margin-left: -18px;
+}
+.stick1 {
+    height: 1px;
+    width: 200px;
+    border: 1px solid rgb(58, 58, 58);
+    margin: 9px;
+    /* justify-content: center; */
+    align-items: center;
+    display: inline-block;
+}
+.big-box3 {
+    justify-content: center;
+    text-align: center;
+}
