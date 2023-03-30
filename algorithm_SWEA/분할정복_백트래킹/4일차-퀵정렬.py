@@ -21,5 +21,4 @@ for tc in range(1, T+1):
     N = int(input())#5
     arr = list(map(int,input().split()))
     qsort(arr,0,N-1)
-    print(arr)
-    print(arr[N//2])
+    print(f'#{tc} {arr[N//2]}')
