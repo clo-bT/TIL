@@ -25,3 +25,15 @@ for tc in range(1, T+1):
     f(0, n, len(arr))
     print(f'#{tc} {maxV}')
 
+'''
+input
+3
+123 1
+2737 1
+32888 2
+
+output
+#1 321
+#2 7732
+#3 88832
+'''

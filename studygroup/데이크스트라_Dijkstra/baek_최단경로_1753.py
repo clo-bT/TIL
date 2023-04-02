@@ -7,10 +7,9 @@ V, E = map(int, input().split())
 son = int(input()) #시작정점1
 
 graph = [[] for _ in range(V+1)]
-dis = [float('inf')]*(V+1)
+dis = [float('inf')]*(V+1) #답이 될 거리
 for _ in range(E):
     u, v, w = map(int, input().split())
-
     graph[u].append((v, w))
 #print(graph) [[], [(2, 2), (3, 3)], [(3, 4), (4, 5)], [(4, 6)], [], [(1, 1)]]
 
@@ -20,16 +19,16 @@ heapq.heappush(q, (0, son))
 dis[son] = 0
 
 while q:
-    distance, node = heapq.heappop(q)
+    d, node = heapq.heappop(q)
     # print('distance',distance,'node',node)
-    if distance > dis[node]:
+    if d > dis[node]:
         continue
     else:
-        for v in graph[node]:
-            weight = distance + v[1]
-            if weight < dis[v[0]]:
-                dis[v[0]] = weight
-                heapq.heappush(q, (weight, v[0]))
+        for i in graph[node]:
+            we = d + i[1] #새로 갱신하는 거
+            if we < dis[node]: #만약에 갱신한 게 원래꺼보다 더 작으면
+                dis[v[0]] = we
+                heapq.heappush(q, (we, i[0]))
                 # print('q', q)
                 # print('dis', dis)
 

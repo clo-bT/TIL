@@ -1,3 +1,4 @@
+'''
 def f():
     pass
 T = int(input()) #3
@@ -17,11 +18,12 @@ for tc in range(1, T+1):
     print(f'#{tc} {ans}')
 
 '''
-교수님 풀이
+#교수님 풀이
 def f(i, k):
     global ans
  
     if i==k:
+        # print(p)
         cnt = 0
         if (p[0]==p[1]==p[2]) or (p[0]+2==p[1]+1==p[2]): # p[0]+1==p[1] and p[1]+1==p[2]
             cnt += 1
@@ -48,8 +50,9 @@ for tc in range(1, T+1):
     used = [0] * 6  # 사용한 숫자인지 표시
  
     ans = f(0, 6)
+    print(p)
     if ans:
         print(f'#{tc} Baby Gin')
     else:
         print(f'#{tc} Lose')
-'''
+    
