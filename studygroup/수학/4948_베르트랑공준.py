@@ -1,23 +1,29 @@
 import sys
 input = sys.stdin.readline
-ans = 0
+# 에라토스테네스의 체
+
+arr = [0 for i in range(123456 * 2 + 1)]
+num = 123456 * 2
+
+# 모든 값을 index로 초기화
+for i in range(num):
+    arr[i] = i
+
+for i in range(2, num + 1):
+    if arr[i] == 0:
+        continue
+    for j in range(i + i, num + 1, i):
+        arr[j] = 0
+
 while True:
-    N = int(input())
-    if N == 0:
-        print(ans)
+    n = int(input())
+    
+    if n == 0:
         break
-    else:
-        ans = 0
-        arr = []
-        for i in range(N, 2*N+1):
-            arr.append(i)
-        # print(arr)
-        for i in arr:
-            cnt = 0
-            if i > 1:
-                for j in range(2, i):
-                    if i % j == 0:
-                        cnt += 1
-                if cnt == 0:
-                    ans += 1
-        print(ans)
+    
+    count = 0
+    for i in range(n + 1, 2 * n + 1):
+        if arr[i] != 0:
+            count += 1
+    
+    print(count)
