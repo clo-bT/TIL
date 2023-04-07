@@ -3,3 +3,6 @@ CREATE TABLE contacts(
     age INTEGER NOT NULL,
     email TEXT NOT NULL UNIQUE
 );
+
+
+
