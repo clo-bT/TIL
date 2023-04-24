@@ -25,11 +25,17 @@ if(true){
 // func = myFunction(20)
 // func(40)
 
-function myFunction(x, y){
-    console.log(x+y)
-    console.log(arguments)
-}
+// function myFunction(x, y){
+//     console.log(x+y)
+//     console.log(arguments)
+// }
 
-myFunction(10,20)
-myFunction(10,20,30,40)
-myFunction(10)
+// myFunction(10,20)
+// myFunction(10,20,30,40)
+// myFunction(10)
+const arr = [1, 2, 3, 4]
+for (let i = 0; i < arr.length; i++){
+    arr[i] = arr[i] ** 3
+  }
+  
+  console.log(arr)
