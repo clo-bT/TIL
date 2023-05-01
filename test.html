@@ -6,36 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    button {
-      background: none;
-      border: 1px solid black;
-      width: 100px;
-      height: 50px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-      margin-left: 10px;
-    }
-
-    .selected {
-      border: 1px solid rgb(80, 184, 231);
-      background-color: rgb(185, 226, 245);
+    .checkedDecoration{
+      text-decoration: line-through;
     }
   </style>
 </head>
 <body>
+  <h1>Todo List</h1>
   <div id="app">
-    <h1>버튼을 골라주세요</h1>
-    <button>선택 1</button>
-    <button>선택 2</button>
+     <div> <!--사용자 입력 파트 -->
+    <input type="text" v-model="word">
+    <button @click="plusTodoList()">+</button>
+    </div>
+    <div> <!--사용자 출력 파트 -->
+      <ul>
+        <li v-for="item of items"
+        :class="{ checkedDecoration: item.isChecked }">
+          <input type="checkbox" v-model="item.isChecked"> {{ item.text }}
+        </li>
+      </ul>
+    </div>
+    <button @click="deleteChecked">완료 목록 삭제</button>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
-
+        word: '',
+        items: [],
       },
       methods: {
-        
+        plusTodoList() {
+          if(this.word.length === 0) {
+            alert('내용을 입력해주세요')
+          } else{
+            this.items.push({
+              text: this.word,
+              isChecked: false,
+            })
+          }
+        },
+        deleteChecked(){
+          this.items = this.items.filter((element) => {
+            return element.isChecked === false
+          })
+        }
       }
     })
   </script>
