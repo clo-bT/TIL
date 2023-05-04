@@ -4,56 +4,62 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Todo List</title>
+
   <style>
-    .checkedDecoration{
+    .completed {
       text-decoration: line-through;
+      color: gray;
     }
   </style>
 </head>
 <body>
   <h1>Todo List</h1>
   <div id="app">
-     <div> <!--사용자 입력 파트 -->
-    <input type="text" v-model="word">
-    <button @click="plusTodoList()">+</button>
-    </div>
-    <div> <!--사용자 출력 파트 -->
-      <ul>
-        <li v-for="item of items"
-        :class="{ checkedDecoration: item.isChecked }">
-          <input type="checkbox" v-model="item.isChecked"> {{ item.text }}
-        </li>
-      </ul>
-    </div>
-    <button @click="deleteChecked">완료 목록 삭제</button>
+    <input type="text" v-model="content">
+    <button @click="addTodo">+</button>
+    <ul>
+      <li v-for="todo in todoList" :key="todo.date">  
+        <input type="checkbox" @click="updateTodo(todo)"> 
+        <span :class="{ completed: todo.completed }">{{ todo.content }}</span>
+      </li>
+    </ul>
+    <br>
+    <button @click="deleteTodo">완료 목록 삭제</button>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
-        word: '',
-        items: [],
+        content: '',
+        todoList: [], 
       },
       methods: {
-        plusTodoList() {
-          if(this.word.length === 0) {
-            alert('내용을 입력해주세요')
-          } else{
-            this.items.push({
-              text: this.word,
-              isChecked: false,
-            })
+        addTodo (event) {
+          if (!this.content) {
+            alert("내용을 입력해주세요!");
+            return;
           }
+          const todo = {
+            content: this.content,
+            completed: false, 
+            date: Date.now(),
+          }
+          this.todoList.push(todo)
+          this.content = ''
         },
-        deleteChecked(){
-          this.items = this.items.filter((element) => {
-            return element.isChecked === false
+        updateTodo (todo) {
+          todo.completed = !todo.completed
+        },  
+        deleteTodo () {
+          const newTodoList = this.todoList.filter(function (todo) {
+            return !todo.completed
           })
-        }
-      }
+          this.todoList = newTodoList
+        },
+      },
     })
   </script>
 </body>
