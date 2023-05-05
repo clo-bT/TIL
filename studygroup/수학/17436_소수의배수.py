@@ -9,3 +9,4 @@ for i in arr:
         if (j not in ans) and (j % i == 0):
             ans.append(j)
 print(len(ans))
+
