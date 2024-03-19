@@ -2,6 +2,7 @@ from collections import deque
 import sys
 input = sys.stdin.readline
 
+# BFS (Breadth-First Search) 너비 우선 탐색
 def bfs(v):
   q = deque()
   q.append(v)       
@@ -15,6 +16,7 @@ def bfs(v):
         q.append(i)
         visited[i] = 1
 
+# DFS (Depth-First Search) 깊이 우선 탐색
 def dfs(v):
   visited1[v] = 1    #방문    
   print(v, end = " ")
